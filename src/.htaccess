@@ -1,0 +1,40 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule index/([0-9]+) index.php?p=$1
+RewriteRule play/([0-9]+)$ player.php?vid=$1
+RewriteRule have_a_look$ have_a_look.php
+RewriteRule search$ search.php
+RewriteRule setting$ setting.php
+RewriteRule logoff$ logoff.php
+RewriteRule login$ login.php
+RewriteRule register$ register.php
+RewriteRule about$ about.php
+RewriteRule license$ license.php
+RewriteRule rss$ rss.php
+RewriteRule admin$ admin.php
+RewriteRule about/([a-z]+)$ about_$1.php
+
+RewriteRule user/favorite$ my_fav.php
+RewriteRule user/recent$ recent.php
+RewriteRule user/favorite/([0-9]+)$ my_fav.php?page=$1
+RewriteRule user/movie$ my_movies.php
+RewriteRule user/movie/([0-9]+)$ my_movies.php?page=$1
+RewriteRule setting/pass$ mod_pw.php
+RewriteRule setting/email$ mod_email.php
+RewriteRule setting/vnum$ mod_vnum.php
+RewriteRule setting/icon$ mod_icon.php
+RewriteRule setting/name$ mod_mb_name.php
+RewriteRule setting/mnum$ mod_mb_num.php
+RewriteRule setting/bio$ mod_mb_bio.php
+
+RewriteRule t/index$ mb.php
+RewriteRule t/broadcast$ broadcast.php
+RewriteRule t/u/([0-9]+)$ m.php?u=$1
+RewriteRule t/find$ find.php
+RewriteRule t/broadcast/([0-9]+)$ t.php?u=$1
+RewriteRule t/follower/([0-9]+)$ follower.php?u=$1
+RewriteRule t/following/([0-9]+)$ following.php?u=$1
+
+RewriteRule url/([0-9a-f]+)$ url.php?go=$1
+RewriteRule url/short$ url_shorten.php

@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="gb2312"?><page><result><?phpheader('Content-Type: text/xml');define("INNER_ACCESS","1");include_once("mblog.php");$uid=$_GET["u"];$fuid=$_GET["f"];$op=$_GET["op"];$smb=new st_mblog(uid);if($op==1)	echo $smb->make_friend($uid,$fuid);else	echo $smb->unmake_friend($uid,$fuid);?></result></page>

@@ -1,0 +1,1 @@
+<?phpinclude_once("config.php");if(!defined("INNER_ACCESS"))	header("Location:$host_name");	$keyword=$_POST["keyword"];$type=$_POST["type"];header("Location:$host_name/search_engine.php?type=$type&keyword=$keyword&page=1");?>

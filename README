@@ -1,0 +1,63 @@
+安装前请仔细阅读本文件
+
+1 用户协议
+SeuTube是东南大学“SRTP”项目，SeuTube的网站程序仅为研究目的，
+所有它的相关网页、后台程序或脚本 和文档都基于GNU General Public License v3发布。
+如果想要使用本网站程序作为研究或商用目的， 请仔细阅读GNU General Public License v3中的相关条款。
+任何使用采用本网站程序的网站的行为，需遵守采用本网站程序的网站的相关用户协议以及相关法规，与网站开发者无关。
+
+2 安装方法
+2.1 Apache
+安装好apache后，需打开http.conf
+加入(请根据具体情况替换C:/wamp/www, localhost替换为你的ip地址)
+<Directory "c:/wamp/www/bin">
+    Allow from 127.0.0.1
+    Order Allow,Deny
+    Deny from all
+</Directory>
+
+<Directory "c:/wamp/www/video">
+    Options FollowSymLinks
+    Order Allow,Deny
+    Allow from all
+</Directory>
+
+<Directory "c:/wamp/www/thumbs">
+    Options FollowSymLinks
+    Order Allow,Deny
+    Allow from all
+</Directory>
+
+<Directory "c:/wamp/www/temp">
+    Options FollowSymLinks
+    Order Allow,Deny
+    Allow from all
+</Directory>
+
+<Directory "c:/wamp/www/images">
+    Order Allow,Deny
+    Allow from all
+    Options FollowSymLinks
+</Directory>
+
+2.2 PHP
+需加载php_gd2 php_mysql库
+设置以下php.ini内容
+max_execution_time = 0 
+max_input_time = -1
+memory_limit = 2048M
+error_reporting = E_ALL & ~E_NOTICE & ~E_DEPRECATED
+register_globals = On
+post_max_size = 1024M
+upload_max_filesize = 1000M
+
+2.3 MySQL
+数据库名，主机名，账户，密码均在/db/config.php中设置
+建立数据库为：seutube
+config.php中设置网站域名
+导入database.sql
+
+2.4 程序设置
+config.php 里面是主机名和管理员密码设置
+db/config.php 里面是数据库相关参数设置
+无比再使用前妥善修改
